@@ -13,11 +13,7 @@
         layout="vertical"
         :validate-messages="validateMessages"
       >
-        <a-form-item
-          name="email"
-          label="Email"
-          :rules="[{ required: true }, { type: 'email' }]"
-        >
+        <a-form-item name="email" label="Email" :rules="[{ required: true }]">
           <a-input
             v-model:value="formState.email"
             placeholder="example@example.com"
