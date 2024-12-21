@@ -139,7 +139,7 @@ const handleLogin = async (values) => {
 
       // Chuyển hướng dựa vào role
       if (foundUser.role === "admin") {
-        router.push("/admin/dashboard");
+        router.push("/admin");
       } else {
         router.push("/");
       }

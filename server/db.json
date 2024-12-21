@@ -117,7 +117,7 @@
   ],
   "categories": [
     {
-      "name": "Office",
+      "name": "Bloomers",
       "description": "Modern",
       "status": true,
       "product": [
@@ -129,7 +129,7 @@
           "category": 1,
           "created_at": "2024-07-11",
           "updated_at": "2024-07-11",
-          "image": "https://firebasestorage.googleapis.com/v0/b/react-32712.appspot.com/o/images%2F211-2112234_pepe-the-frog-windows-101..png?alt=media&token=e7bdf80d-884f-4e3d-9980-2701a99d9c19",
+          "image": "https://th.bing.com/th/id/OIP.4nUONUjRcpgYX6wog2WyEAHaGv?rs=1&pid=ImgDetMain",
           "id": 1
         },
         {
@@ -140,7 +140,7 @@
           "category": 1,
           "created_at": "2024-07-11",
           "updated_at": "2024-07-11",
-          "image": "https://firebasestorage.googleapis.com/v0/b/react-32712.appspot.com/o/images%2Fimage-remoeview.png?alt=media&token=ef73b206-21f6-43d9-b87c-ecbc9c8ec38b",
+          "image": "https://th.bing.com/th/id/OIP.4nUONUjRcpgYX6wog2WyEAHaGv?rs=1&pid=ImgDetMain",
           "id": 3
         }
       ],
@@ -149,7 +149,7 @@
       "displayStatus": true
     },
     {
-      "name": "Bedroom",
+      "name": "Jeans",
       "description": "1231231",
       "status": true,
       "product": [
@@ -161,49 +161,49 @@
           "category": 2,
           "created_at": "2024-07-11",
           "updated_at": "2024-07-11",
-          "image": "https://firebasestorage.googleapis.com/v0/b/react-32712.appspot.com/o/images%2F112312-removebg-preview.png?alt=media&token=c22de7e9-0c01-42d8-bef2-8bb2a1c761c0",
+          "image": "https://th.bing.com/th/id/OIP.4nUONUjRcpgYX6wog2WyEAHaGv?rs=1&pid=ImgDetMain",
           "id": 2
         }
       ],
       "image": "https://firebasestorage.googleapis.com/v0/b/react-32712.appspot.com/o/images%2Fcategory-1.jpg?alt=media&token=971fe60a-786a-44b6-ac24-eb258f2fb37a",
       "id": 2,
-      "displayStatus": false
+      "displayStatus": true
     },
     {
-      "name": "Livingroom",
+      "name": "Sport",
       "description": "123123123123",
       "status": true,
       "product": [],
       "image": "https://firebasestorage.googleapis.com/v0/b/react-32712.appspot.com/o/images%2Fcategory-4.jpg?alt=media&token=c0a6bb0d-36a9-4470-9911-a79815ace89b",
       "id": 3,
-      "displayStatus": false
+      "displayStatus": true
     },
     {
-      "name": "Restroom",
+      "name": "Classic",
       "description": "123123123123",
       "status": true,
       "product": [],
       "image": "https://firebasestorage.googleapis.com/v0/b/react-32712.appspot.com/o/images%2Fcategory-5.jpg?alt=media&token=2e96e22e-25e2-4863-a854-2acbfa64c2fe",
       "id": 4,
-      "displayStatus": false
+      "displayStatus": true
     },
     {
-      "name": "Kitchen",
+      "name": "Modern",
       "description": "1231231312",
       "status": true,
       "product": [],
       "image": "https://firebasestorage.googleapis.com/v0/b/react-32712.appspot.com/o/images%2Fcategory-6.jpg?alt=media&token=170cdef4-a185-44c2-a091-36a66adde2aa",
       "id": 5,
-      "displayStatus": false
+      "displayStatus": true
     },
     {
-      "name": "Bathroom",
+      "name": "Autumn Clothes",
       "description": "12312313",
       "status": true,
       "product": [],
       "image": "https://firebasestorage.googleapis.com/v0/b/react-32712.appspot.com/o/images%2Fopen-bathroom.jpg?alt=media&token=09a549a9-fa53-4630-98d3-65c999139115",
       "id": 6,
-      "displayStatus": false
+      "displayStatus": true
     }
   ]
 }

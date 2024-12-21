@@ -33,22 +33,21 @@
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div
-          v-for="category in activeCategories"
-          :key="category.id"
+          v-for="category in categories"
+          :key="category?.id"
           class="category-card relative rounded-lg overflow-hidden group"
         >
           <img
             src="https://www.alamodelabel.in/cdn/shop/files/6864D66E-6BD4-42AC-A778-10230C3482C1_600x.jpg?v=1734286075"
-            :alt="category.name"
+            :alt="category?.name"
             class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
           />
-          <router-link
-            :to="`/category/${category.id}`"
-            @click="handleCategoryClick(category)"
+          <div
+            @click="getCategory(category)"
             class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-medium group-hover:bg-opacity-60 transition-all duration-300 no-underline"
           >
-            {{ category.name }}
-          </router-link>
+            {{ category?.name }}
+          </div>
         </div>
       </div>
     </section>
@@ -68,43 +67,31 @@ const store = useStore();
 const bannerImage = ref(
   "https://d3jmn01ri1fzgl.cloudfront.net/photoadking/webp_thumbnail/shark-new-collection-sale-clothing-banner-template-p3ztild89dffd0.webp"
 );
-const defaultImage =
-  "https://www.alamodelabel.in/cdn/shop/files/6864D66E-6BD4-42AC-A778-10230C3482C1_600x.jpg?v=1734286075";
 
 // Computed Categories
-const activeCategories = computed(() => {
-  // Filter categories where status is true
-  return store.state.home.categories
-    .filter((category) => category.status)
-    .slice(0, 6);
-});
 
+const categories = computed(() => store.state.home.categories.slice(0, 6));
 // Fetch categories on mount
-onMounted(async () => {
-  try {
-    await store.dispatch("getAllCategories"); // Dispatch action to fetch categories
-  } catch (error) {
-    console.error("Failed to fetch categories:", error);
-  }
-});
 
-// Handle Category Click (Update display status)
-const handleCategoryClick = async (selectedCategory) => {
-  try {
-    // Update all categories to have displayStatus false except the selected one
-    const updatePromises = activeCategories.value.map((category) => {
-      const updatedCategory = {
-        ...category,
-        displayStatus: category.id === selectedCategory.id,
-      };
-      return store.dispatch("editCategory", updatedCategory);
+console.log(store.state.home, 9999);
+const getCategory = (category) => {
+  let index = categories.value.findIndex((c) => c.id == category.id);
+  if (index !== -1) {
+    let updatedCategory = {
+      ...categories[index],
+      displayStatus: true,
+    };
+    categories.value.forEach((cat) => {
+      if (cat.id !== category.id) {
+        let updatedCat = { ...cat, displayStatus: false };
+        store.dispatch("updateCategory", updatedCat);
+      }
     });
-
-    await Promise.all(updatePromises); // Wait for all updates to finish
-  } catch (error) {
-    console.error("Failed to update category status:", error);
+    store.dispatch("updateCategory", updatedCategory);
+    router.push(`/category`);
   }
 };
+onMounted(() => store.dispatch("getAllCategories"));
 </script>
 
 <style scoped>

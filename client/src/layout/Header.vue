@@ -12,8 +12,8 @@
           <SketchOutlined class="text-[40px]" />
 
           <div>
-            <span class="text-[40px] text-sky-400">Furni</span>
-            <span class="text-[30px] text-purple-500">craft</span>
+            <span class="text-[40px] text-sky-400">Clo</span>
+            <span class="text-[30px] text-purple-500">thes</span>
           </div>
         </router-link>
         <div class="w-full max-w-xl flex static">
@@ -82,7 +82,9 @@
             <span class="text-white">
               <OrderedListOutlined class="text-[20px]" />
             </span>
-            <span class="capitalize ml-2 text-white">All categories</span>
+            <span @click="redirect" class="capitalize ml-2 text-white"
+              >All categories</span
+            >
             <div
               class="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-x divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 duration-300 invisible group-hover:visible"
             >
@@ -189,6 +191,16 @@ const logout = () => {
   localStorage.removeItem("token");
   token.value = false;
   router.push("/");
+};
+
+const redirect = () => {
+  router.push("/category");
+  categories.value.forEach((cat) => {
+    let updatedCat = { ...cat, displayStatus: true };
+    store.dispatch("updateCategory", updatedCat);
+  });
+  store.dispatch("updateCategory", updatedCategory);
+  router.push(`/category`);
 };
 
 onMounted(() => {

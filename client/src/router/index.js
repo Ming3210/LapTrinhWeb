@@ -56,55 +56,58 @@ const routes = [
           import(
             /* webpackChunkName: "Dashboard" */ "@/views/admin/Dashboard.vue"
           ),
-      },
-      {
-        path: "all-category",
-        component: () =>
-          import(
-            /* webpackChunkName: "AllCategory" */ "@/views/admin/AllCategory.vue"
-          ),
-      },
-      {
-        path: "check-product",
-        component: () =>
-          import(
-            /* webpackChunkName: "AllProduct" */ "@/views/admin/AllProduct.vue"
-          ),
-      },
-      {
-        path: "cart",
-        component: () =>
-          import(
-            /* webpackChunkName: "CartAdmin" */ "@/views/admin/CartAdmin.vue"
-          ),
-      },
-      {
-        path: "add-product",
-        component: () =>
-          import(
-            /* webpackChunkName: "AddProduct" */ "@/views/admin/AddProduct.vue"
-          ),
-      },
-      {
-        path: "check-user",
-        component: () =>
-          import(
-            /* webpackChunkName: "AllCustomer" */ "@/views/admin/AllCustomer.vue"
-          ),
-      },
-      // {
-      //   path: "add-user",
-      //   component: () =>
-      //     import(
-      //       /* webpackChunkName: "AddCustomer" */ "@/views/AddCustomer.vue"
-      //     ),
-      // },
-      {
-        path: "add-category",
-        component: () =>
-          import(
-            /* webpackChunkName: "AddCategory" */ "@/views/admin/AddCategory.vue"
-          ),
+        alias: ["dashboard"],
+        children: [
+          {
+            path: "all-category",
+            component: () =>
+              import(
+                /* webpackChunkName: "AllCategory" */ "@/views/admin/AllCategory.vue"
+              ),
+          },
+          {
+            path: "check-product",
+            component: () =>
+              import(
+                /* webpackChunkName: "AllProduct" */ "@/views/admin/AllProduct.vue"
+              ),
+          },
+          {
+            path: "cart",
+            component: () =>
+              import(
+                /* webpackChunkName: "CartAdmin" */ "@/views/admin/CartAdmin.vue"
+              ),
+          },
+          {
+            path: "add-product",
+            component: () =>
+              import(
+                /* webpackChunkName: "AddProduct" */ "@/views/admin/AddProduct.vue"
+              ),
+          },
+          {
+            path: "check-user",
+            component: () =>
+              import(
+                /* webpackChunkName: "AllCustomer" */ "@/views/admin/AllCustomer.vue"
+              ),
+          },
+          // {
+          //   path: "add-user",
+          //   component: () =>
+          //     import(
+          //       /* webpackChunkName: "AddCustomer" */ "@/views/AddCustomer.vue"
+          //     ),
+          // },
+          {
+            path: "add-category",
+            component: () =>
+              import(
+                /* webpackChunkName: "AddCategory" */ "@/views/admin/AddCategory.vue"
+              ),
+          },
+        ],
       },
     ],
   },
